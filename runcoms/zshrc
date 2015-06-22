@@ -1,9 +1,11 @@
 #
 # Executes commands at the start of an interactive session.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+
+# Needed to get rvm to work
+if test -f ~/.rvm/scripts/rvm; then
+   [ "$(type rvm)" = "function" ] || source ~/.rvm/scripts/rvm
+fi
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -11,3 +13,51 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+## Aliases
+
+alias c='clear'
+alias rld=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+
+## a quick way to get out of current directory ##
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+alias h='history'
+# alias j='jobs -l'
+
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+alias ip="curl icanhazip.com"
+
+alias path='echo -e ${PATH//:/\\n}'
+
+# time
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 5 -s 2'
+
+## git
+
+# log with pretty formatting
+alias gl='git log --graph --pretty=format:"%C(bold red)%h%C(reset)%C(yellow)%d%C(reset) %C(red)(%cr)%C(reset) %s — %C(blue)%ae%C(reset)" --abbrev-commit'
+
+# go related
+alias gol='golint *.go'
+alias gov='go vet *.go'
+alias conveygae='$GOPATH/bin/goconvey -gobin=goapp'
+
+# osx finder fix
+alias fixfinder='rm ~/Library/Preferences/com.apple.finder.plist&&killall Finder'
+
+# logcat with colours
+alias logc='adb logcat | ~/.scripts/coloredlogcat.py'
