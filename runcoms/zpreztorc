@@ -37,12 +37,13 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt'
 
+
 #
 # Editor
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -64,6 +65,9 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 # History Substring Search
 #
+
+# Enable highlighting for history-substring-search module only
+zstyle ':prezto:module:history-substring-search' color 'yes'
 
 # Set the query found color.
 # zstyle ':prezto:module:history-substring-search:color' found ''
