@@ -33,7 +33,7 @@ fi
 ##
 
 # Go
-export GOPATH=$HOME/gocode
+export GOPATH=/Users/john/gocode
 
 # Python
 export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
@@ -50,10 +50,12 @@ path=(
   /usr/sbin
   /sbin
   # /usr/local/Cellar/go/1.4.2/libexec/bin  # Path to go used in Homebrew.  Here to get GoConvey working. - JGB
-  $HOME/appengine_go #added 04/04/2014 for Go Appengine SDK
-  ${GOPATH//://bin:}/bin # add all $GOPATH/bin directories to the path
-  $HOME/.rvm/bin # Add RVM (Ruby Version Manager) to PATH for scripting
+  $HOME/go_appengine                             #added 04/04/2014 for Go Appengine SDK
+  ${GOPATH//://bin:}/bin                         # add all $GOPATH/bin directories to the path
+  $HOME/.rvm/bin                                 # Add RVM (Ruby Version Manager) to PATH for scripting
   $HOME/.scripts
+  /Users/john/Library/Android/sdk/platform-tools # JGB 29-09-2016 Added to get github.com/JakeWharton/pidcat working
+  /Users/john/Library/Android/sdk/tools          # JGB 29-09-2016 Added to get github.com/JakeWharton/pidcat working
   $PATH
 )
 
