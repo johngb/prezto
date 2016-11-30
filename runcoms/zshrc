@@ -59,7 +59,7 @@ alias gov='go vet *.go'
 alias conveygae='$GOPATH/bin/goconvey -gobin=goapp'
 
 # go appengine related
-alias gata='goapp test ./...'
+alias gata='goapp test -tags=throttle ./...'
 alias gaba='goapp build ./...'
 
 # osx finder fix
@@ -67,6 +67,7 @@ alias fixfinder='rm ~/Library/Preferences/com.apple.finder.plist&&killall Finder
 
 # logcat with colours
 alias logc='adb logcat | ~/.scripts/coloredlogcat.py'
+
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/john/google-cloud-sdk/path.zsh.inc'
